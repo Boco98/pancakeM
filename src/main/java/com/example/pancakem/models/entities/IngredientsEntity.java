@@ -1,5 +1,6 @@
 package com.example.pancakem.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,5 +24,8 @@ public class IngredientsEntity {
     @Basic
     @Column(name = "healthy_ingredient", nullable = true)
     private Boolean healthyIngredient;
-
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name="category_id" ,referencedColumnName="id" , nullable = false)
+    private IngredientCategoriesEntity ingredient_categories;
 }
