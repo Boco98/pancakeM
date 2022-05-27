@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Data
 @Entity
-@Table(name = "orders_pancakes", schema = "pancake1", catalog = "")
+@Table(name = "orders_pancakes")
 @IdClass(OrdersPancakesEntityPK.class)
 public class OrdersPancakesEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
