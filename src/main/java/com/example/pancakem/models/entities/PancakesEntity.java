@@ -3,7 +3,6 @@ package com.example.pancakem.models.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -17,9 +16,5 @@ public class PancakesEntity {
     @Basic
     @Column(name = "name", nullable = false, length = 45)
     private String name;
-    @OneToMany(mappedBy = "pancakes")
-    private List<OrdersPancakesEntity> ordersPancakes;
-    @OneToMany(mappedBy = "pancakes")
-    private List<PancakesIngredientsEntity> pancakesIngredients;
 
 }

@@ -17,7 +17,7 @@ public class IngredientCategoriesEntity {
     @Basic
     @Column(name = "category_name", nullable = false, length = 45)
     private String categoryName;
-    @OneToMany(mappedBy = "ingredientCategories")
+    @OneToMany(mappedBy = "ingredientCategoriesByCategoryId")
     private List<IngredientsEntity> ingredients;
 
 }

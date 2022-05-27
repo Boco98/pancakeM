@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -24,10 +23,5 @@ public class IngredientsEntity {
     @Basic
     @Column(name = "healthy_ingredient", nullable = true)
     private Boolean healthyIngredient;
-    @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id", nullable = false)
-    private IngredientCategoriesEntity ingredientCategories;
-    @OneToMany(mappedBy = "ingredients")
-    private List<PancakesIngredientsEntity> pancakesIngredients;
 
 }

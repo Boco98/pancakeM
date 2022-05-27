@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -24,7 +23,5 @@ public class OrdersEntity {
     @ManyToOne
     @JoinColumn(name = "discount_id", referencedColumnName = "id", nullable = false)
     private DiscountsEntity discounts;
-    @OneToMany(mappedBy = "orders")
-    private List<OrdersPancakesEntity> orders;
 
 }
