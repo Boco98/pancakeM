@@ -1,5 +1,6 @@
 package com.example.pancakem.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class DiscountsEntity {
     @Column(name = "discount", nullable = true)
     private Integer discount;
     @OneToMany(mappedBy = "discounts")
+    @JsonIgnore
     private List<OrdersEntity> orders;
 
 }
