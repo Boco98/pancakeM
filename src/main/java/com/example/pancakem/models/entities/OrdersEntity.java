@@ -22,7 +22,6 @@ public class OrdersEntity {
     @Column(name = "description", nullable = true, length = 200)
     private String description;
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "discount_id", referencedColumnName = "id", nullable = false)
     private DiscountsEntity discounts;
 

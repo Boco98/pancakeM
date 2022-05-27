@@ -25,7 +25,6 @@ public class IngredientsEntity {
     @Column(name = "healthy_ingredient", nullable = true)
     private Boolean healthyIngredient;
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name="category_id" ,referencedColumnName="id" , nullable = false)
     private IngredientCategoriesEntity ingredient_categories;
 }
