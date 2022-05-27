@@ -21,7 +21,7 @@ public class OrdersEntity {
     @Basic
     @Column(name = "description", nullable = true, length = 200)
     private String description;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "discount_id", referencedColumnName = "id", nullable = false)
     private DiscountsEntity discounts;
 
