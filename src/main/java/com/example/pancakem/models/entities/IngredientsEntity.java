@@ -5,7 +5,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Data
 @Entity
@@ -27,4 +29,8 @@ public class IngredientsEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="category_id" ,referencedColumnName="id" , nullable = false)
     private IngredientCategoriesEntity ingredient_categories;
+
+    @ManyToMany(mappedBy = "ingredients", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<PancakesEntity> pancakes = new HashSet<>();
 }
