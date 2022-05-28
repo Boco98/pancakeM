@@ -18,7 +18,7 @@ public class IngredientCategoriesEntity {
     @Basic
     @Column(name = "category_name", nullable = false, length = 45)
     private String categoryName;
-    @OneToMany(mappedBy = "ingredient_categories")
+    @OneToMany(mappedBy = "ingredientCategories")
     @JsonIgnore
     private List<IngredientsEntity> ingredients;
 

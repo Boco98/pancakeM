@@ -31,4 +31,9 @@ public class IngredientsServiceImpl implements IngredientsService {
     public Ingredient findById(Integer id)  throws NotFoundException {
         return modelMapper.map(ingredientsEntityRepository.findById(id).orElseThrow(NotFoundException::new),Ingredient.class);
     }
+
+    @Override
+    public List<Ingredient> getAllIngredientsByCategoryId(Integer id) {
+        return ingredientsEntityRepository.getAllByIngredientCategories_Id(id).stream().map(l->modelMapper.map(l, Ingredient.class)).collect(Collectors.toList());
+    }
 }

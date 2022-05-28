@@ -9,4 +9,6 @@ public interface IngredientsService {
     List<Ingredient> findAll();
 
     Ingredient findById(Integer id) throws NotFoundException;
+
+    List<Ingredient> getAllIngredientsByCategoryId(Integer id);
 }

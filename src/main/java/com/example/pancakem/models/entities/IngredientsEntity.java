@@ -28,7 +28,7 @@ public class IngredientsEntity {
     private Boolean healthyIngredient;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="category_id" ,referencedColumnName="id" , nullable = false)
-    private IngredientCategoriesEntity ingredient_categories;
+    private IngredientCategoriesEntity ingredientCategories;
 
     @ManyToMany(mappedBy = "ingredients", fetch = FetchType.LAZY)
     @JsonIgnore
