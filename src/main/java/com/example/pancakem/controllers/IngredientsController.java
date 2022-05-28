@@ -1,5 +1,6 @@
 package com.example.pancakem.controllers;
 
+import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Ingredient;
 import com.example.pancakem.models.IngredientRequest;
@@ -40,12 +41,12 @@ public class IngredientsController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Ingredient insert(@RequestBody IngredientRequest ingredientRequest) throws NotFoundException {
+    public Ingredient insert(@RequestBody IngredientRequest ingredientRequest) throws NotFoundException, ConflictException {
         return ingredientsService.insert(ingredientRequest);
     }
 
     @PutMapping("/{id}")
-    public Ingredient update(@PathVariable Integer id, @RequestBody IngredientRequest ingredientRequest) throws NotFoundException {
+    public Ingredient update(@PathVariable Integer id, @RequestBody IngredientRequest ingredientRequest) throws NotFoundException, ConflictException {
         return ingredientsService.update(id,ingredientRequest);
     }
 }

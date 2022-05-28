@@ -1,7 +1,9 @@
 package com.example.pancakem.controllers;
 
+import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Pancake;
+import com.example.pancakem.models.PancakeRequest;
 import com.example.pancakem.models.SinglePancake;
 import com.example.pancakem.models.entities.PancakesEntity;
 import com.example.pancakem.repositories.PancakesEntityRepository;
@@ -9,10 +11,8 @@ import com.example.pancakem.services.IngredientsService;
 import com.example.pancakem.services.PancakesService;
 import net.bytebuddy.utility.nullability.AlwaysNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,6 +38,20 @@ public class PancakesController {
         return pancakesService.findById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id){
+        pancakesService.delete(id);
+    }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Pancake insert(@RequestBody PancakeRequest pancakeRequest) throws NotFoundException, ConflictException{
+        return pancakesService.insert(pancakeRequest);
+    }
+
+    @PutMapping("/{id}")
+    public Pancake update(@PathVariable Integer id, @RequestBody PancakeRequest pancakeRequest) throws  NotFoundException, ConflictException{
+        return pancakesService.update(id, pancakeRequest);
+    }
 
 
 }

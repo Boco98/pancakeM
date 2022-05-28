@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PancakesEntityRepository extends JpaRepository<PancakesEntity, Integer> {
-
+    Boolean existsByName(String name);
 }

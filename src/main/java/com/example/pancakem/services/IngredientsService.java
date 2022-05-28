@@ -1,5 +1,6 @@
 package com.example.pancakem.services;
 
+import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Ingredient;
 import com.example.pancakem.models.IngredientRequest;
@@ -14,6 +15,6 @@ public interface IngredientsService {
     List<Ingredient> getAllIngredientsByCategoryId(Integer id);
 
     void delete(Integer id);
-    Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException;
-    Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException;
+    Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException, ConflictException;
+    Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException, ConflictException;
 }

@@ -1,5 +1,6 @@
 package com.example.pancakem.services.impl;
 
+import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Ingredient;
 import com.example.pancakem.models.IngredientRequest;
@@ -53,6 +54,8 @@ public class IngredientsServiceImpl implements IngredientsService {
     public Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException {
         IngredientsEntity ingredientsEntity=modelMapper.map(ingredientRequest, IngredientsEntity.class);
         ingredientsEntity.setId(null);
+        if(ingredientsEntityRepository.existsByName(ingredientsEntity.getName()))
+            throw new ConflictException();
         ingredientsEntity= ingredientsEntityRepository.saveAndFlush(ingredientsEntity);
         entityManager.refresh(ingredientsEntity);
         return findById(ingredientsEntity.getId());
@@ -61,9 +64,10 @@ public class IngredientsServiceImpl implements IngredientsService {
     public Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException {
         IngredientsEntity ingredientsEntity=modelMapper.map(ingredientRequest, IngredientsEntity.class);
         ingredientsEntity.setId(id);
+        /*if(ingredientsEntityRepository.existsByName(ingredientsEntity.getName()))
+            throw new ConflictException();*/
         ingredientsEntity= ingredientsEntityRepository.saveAndFlush(ingredientsEntity);
         entityManager.refresh(ingredientsEntity);
         return findById(ingredientsEntity.getId());
-
     }
 }

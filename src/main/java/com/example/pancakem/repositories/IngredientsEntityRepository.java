@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IngredientsEntityRepository extends JpaRepository<IngredientsEntity, Integer> {
     List<IngredientsEntity> getAllByIngredientCategories_Id(Integer id);
+    Boolean existsByName(String name);
 }

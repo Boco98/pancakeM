@@ -1,14 +1,12 @@
 package com.example.pancakem.controllers;
 
+import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
-import com.example.pancakem.models.Order;
-import com.example.pancakem.models.SingleOrder;
+import com.example.pancakem.models.*;
 import com.example.pancakem.services.OrdersService;
 import com.example.pancakem.services.PancakesService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,4 +30,21 @@ public class OrdersController {
     public SingleOrder findById(@PathVariable Integer id) throws NotFoundException {
         return ordersService.findById(id);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id){
+        ordersService.delete(id);
+    }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Order insert(@RequestBody OrderRequest orderRequest) throws NotFoundException, ConflictException {
+        return ordersService.insert(orderRequest);
+    }
+
+    @PutMapping("/{id}")
+    public Order update(@PathVariable Integer id, @RequestBody OrderRequest orderRequest) throws  NotFoundException, ConflictException{
+        return ordersService.update(id, orderRequest);
+    }
+
+
 }
