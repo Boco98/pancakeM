@@ -30,5 +30,5 @@ public class PancakesEntity implements Serializable {
             inverseJoinColumns = {
             @JoinColumn(name = "ingredient_id", referencedColumnName = "id")})
     @JsonIgnore
-    private Set<IngredientsEntity> ingredients  = new HashSet<>();
+    private List<IngredientsEntity> ingredients ;
 }

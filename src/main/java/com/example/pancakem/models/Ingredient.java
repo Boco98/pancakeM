@@ -13,5 +13,5 @@ public class Ingredient {
     private String name;
     private BigDecimal price;
     private Boolean healthyIngredient;
-    private String ingredient_categoriesName;
+    private String ingredientCategoriesName;
 }

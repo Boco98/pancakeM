@@ -25,4 +25,5 @@ public class OrdersEntity {
     @JoinColumn(name = "discount_id", referencedColumnName = "id", nullable = false)
     private DiscountsEntity discounts;
 
+
 }

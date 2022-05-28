@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -32,5 +33,5 @@ public class IngredientsEntity {
 
     @ManyToMany(mappedBy = "ingredients", fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<PancakesEntity> pancakes = new HashSet<>();
+    private List<PancakesEntity> pancakes ;
 }
