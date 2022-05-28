@@ -34,6 +34,8 @@ public class OrdersEntity {
                     @JoinColumn(name = "pancake1_id", referencedColumnName = "id")})
     @JsonIgnore
     private List<PancakesEntity> pancakes;
+
+
 }
 
 

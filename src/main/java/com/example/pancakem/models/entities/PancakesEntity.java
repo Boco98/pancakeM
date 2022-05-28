@@ -26,12 +26,11 @@ public class PancakesEntity implements Serializable {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(name = "pancakes_ingredients",
             joinColumns = {
-            @JoinColumn(name = "pancake_id" , referencedColumnName = "id")},
+                    @JoinColumn(name = "pancake_id", referencedColumnName = "id")},
             inverseJoinColumns = {
-            @JoinColumn(name = "ingredient_id", referencedColumnName = "id")})
+                    @JoinColumn(name = "ingredient_id", referencedColumnName = "id")})
     @JsonIgnore
-    private List<IngredientsEntity> ingredients ;
-
+    private List<IngredientsEntity> ingredients;
 
 
     @ManyToMany(mappedBy = "pancakes", fetch = FetchType.LAZY)

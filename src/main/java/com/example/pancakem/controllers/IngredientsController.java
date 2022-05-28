@@ -2,14 +2,13 @@ package com.example.pancakem.controllers;
 
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Ingredient;
+import com.example.pancakem.models.IngredientRequest;
 import com.example.pancakem.models.entities.IngredientsEntity;
 import com.example.pancakem.repositories.IngredientsEntityRepository;
 import com.example.pancakem.services.IngredientsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +30,22 @@ public class IngredientsController {
     @GetMapping("/{id}")
     public Ingredient findById(@PathVariable Integer id) throws NotFoundException {
         return ingredientsService.findById(id);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id){
+        ingredientsService.delete(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Ingredient insert(@RequestBody IngredientRequest ingredientRequest) throws NotFoundException {
+        return ingredientsService.insert(ingredientRequest);
+    }
+
+    @PutMapping("/{id}")
+    public Ingredient update(@PathVariable Integer id, @RequestBody IngredientRequest ingredientRequest) throws NotFoundException {
+        return ingredientsService.update(id,ingredientRequest);
     }
 }
