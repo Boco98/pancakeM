@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -23,7 +25,17 @@ public class OrdersEntity {
     private String description;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "discount_id", referencedColumnName = "id", nullable = false)
+    @JsonIgnore
     private DiscountsEntity discounts;
 
-
+    @ManyToMany(fetch = FetchType.LAZY, cascade =  CascadeType.PERSIST)
+    @JoinTable(name = "orders_pancakes",
+            joinColumns = {
+                    @JoinColumn(name = "order_id", referencedColumnName = "id")},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "pancake1_id", referencedColumnName = "id")})
+    @JsonIgnore
+    private List<PancakesEntity> pancakes;
 }
+
+

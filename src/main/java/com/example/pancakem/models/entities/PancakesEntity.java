@@ -31,4 +31,11 @@ public class PancakesEntity implements Serializable {
             @JoinColumn(name = "ingredient_id", referencedColumnName = "id")})
     @JsonIgnore
     private List<IngredientsEntity> ingredients ;
+
+
+
+    @ManyToMany(mappedBy = "pancakes", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<OrdersEntity> orders;
+
 }
