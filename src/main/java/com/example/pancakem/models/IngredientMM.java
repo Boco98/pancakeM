@@ -1,18 +1,17 @@
 package com.example.pancakem.models;
 
-import com.example.pancakem.models.entities.IngredientCategoriesEntity;
+import com.example.pancakem.models.entities.PancakesEntity;
 import lombok.Data;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
-public class Ingredient {
+public class IngredientMM {
     private Integer id;
     private String name;
     private BigDecimal price;
     private Boolean healthyIngredient;
     private Integer ingredientCategoriesId;
-    private String ingredientCategoriesName;
+    List<PancakesEntity> pancakes;
 }

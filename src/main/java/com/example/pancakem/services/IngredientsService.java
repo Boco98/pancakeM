@@ -5,6 +5,7 @@ import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Ingredient;
 import com.example.pancakem.models.IngredientRequest;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 public interface IngredientsService {
@@ -15,6 +16,7 @@ public interface IngredientsService {
     List<Ingredient> getAllIngredientsByCategoryId(Integer id);
 
     void delete(Integer id);
+    public EntityManager getManager();
     Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException, ConflictException;
     Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException, ConflictException;
 }

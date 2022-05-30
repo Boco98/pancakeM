@@ -23,7 +23,7 @@ public class PancakesEntity implements Serializable {
     @Column(name = "name", nullable = false, length = 45)
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "pancakes_ingredients",
             joinColumns = {
                     @JoinColumn(name = "pancake_id", referencedColumnName = "id")},

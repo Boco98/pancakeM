@@ -10,4 +10,5 @@ public class IngredientRequest {
     private BigDecimal price;
     private Boolean healthyIngredient;
     private Integer ingredientCategoriesId;
+    private String ingredientCategoriesName;
 }

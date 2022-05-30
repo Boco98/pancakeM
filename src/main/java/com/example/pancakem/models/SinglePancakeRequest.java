@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class PancakeRequest {
+public class SinglePancakeRequest {
     private Integer id;
     private String name;
     List<Ingredient> ingredients;

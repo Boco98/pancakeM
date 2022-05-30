@@ -30,6 +30,10 @@ public class IngredientsServiceImpl implements IngredientsService {
     private final IngredientsEntityRepository ingredientsEntityRepository;
     @PersistenceContext
     private EntityManager entityManager;
+
+    public EntityManager getManager(){
+        return entityManager;
+    }
     @Override
     public List<Ingredient> findAll() {
         return ingredientsEntityRepository.findAll().stream().map(l->modelMapper.map(l, Ingredient.class)).collect(Collectors.toList());
