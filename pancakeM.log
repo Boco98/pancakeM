@@ -3165,3 +3165,78 @@ java.lang.IllegalStateException: Could not resolve parameter [1] in public final
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
 2022-05-30 16:11:13.517  WARN 8656 --- [http-nio-9000-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' not supported]
+2022-05-30 18:20:46.790  INFO 8656 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 18:20:47.125  INFO 8656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 18:20:47.412  INFO 8656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 18:55:36.710  INFO 10044 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 10044 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 18:55:36.727  INFO 10044 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 18:55:39.271  INFO 10044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 18:55:39.482  INFO 10044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 188 ms. Found 4 JPA repository interfaces.
+2022-05-30 18:55:40.917  INFO 10044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 18:55:40.942  INFO 10044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 18:55:40.944  INFO 10044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 18:55:41.311  INFO 10044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 18:55:41.313  INFO 10044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4330 ms
+2022-05-30 18:55:41.762  INFO 10044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 18:55:42.887  INFO 10044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 18:55:43.020  INFO 10044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 18:55:43.291  INFO 10044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 18:55:43.683  INFO 10044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 18:55:43.888  INFO 10044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 18:55:45.017  INFO 10044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 18:55:45.032  INFO 10044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 18:55:45.881  WARN 10044 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 18:55:46.554  INFO 10044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 18:55:46.575  INFO 10044 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 11.569 seconds (JVM running for 15.65)
+2022-05-30 19:09:40.892  INFO 10044 --- [http-nio-9000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 19:09:40.923  INFO 10044 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 19:09:41.058  INFO 10044 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 132 ms
+2022-05-30 19:20:39.681  INFO 3720 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 3720 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 19:20:39.690  INFO 3720 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 19:20:42.594  INFO 3720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 19:20:42.770  INFO 3720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 4 JPA repository interfaces.
+2022-05-30 19:20:43.920  INFO 3720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 19:20:43.941  INFO 3720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 19:20:43.944  INFO 3720 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 19:20:44.279  INFO 3720 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 19:20:44.281  INFO 3720 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4407 ms
+2022-05-30 19:20:44.628  INFO 3720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 19:20:45.643  INFO 3720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 19:20:45.726  INFO 3720 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 19:20:45.847  INFO 3720 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 19:20:47.278  INFO 3720 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 19:20:49.046  INFO 3720 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 19:20:55.151  INFO 3720 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 19:20:55.195  INFO 3720 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 19:20:59.002  WARN 3720 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 19:20:59.887  INFO 3720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 19:20:59.914  INFO 3720 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 21.573 seconds (JVM running for 24.596)
+2022-05-30 19:22:55.593  INFO 3720 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 19:22:55.607  INFO 3720 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 19:22:55.911  INFO 3720 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 303 ms
+2022-05-30 20:27:43.825  INFO 3720 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 20:27:43.953  INFO 3720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 20:27:44.132  INFO 3720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 20:28:01.847  INFO 11644 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 11644 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 20:28:01.853  INFO 11644 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 20:28:03.518  INFO 11644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 20:28:03.722  INFO 11644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 4 JPA repository interfaces.
+2022-05-30 20:28:04.882  INFO 11644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 20:28:04.897  INFO 11644 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 20:28:04.898  INFO 11644 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 20:28:05.079  INFO 11644 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 20:28:05.081  INFO 11644 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3087 ms
+2022-05-30 20:28:05.326  INFO 11644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 20:28:05.955  INFO 11644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 20:28:06.032  INFO 11644 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 20:28:06.128  INFO 11644 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 20:28:06.474  INFO 11644 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 20:28:06.659  INFO 11644 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 20:28:07.609  INFO 11644 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 20:28:07.625  INFO 11644 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 20:28:08.631  WARN 11644 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 20:28:09.250  INFO 11644 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 20:28:09.273  INFO 11644 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 8.372 seconds (JVM running for 10.585)
+2022-05-30 20:28:16.934  INFO 11644 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 20:28:16.935  INFO 11644 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 20:28:16.943  INFO 11644 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
