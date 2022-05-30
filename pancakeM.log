@@ -2314,3 +2314,854 @@ java.lang.IllegalStateException: Could not resolve parameter [1] in public final
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
 2022-05-30 15:30:24.945  WARN 13580 --- [http-nio-9000-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2022-05-30 15:35:00.864 ERROR 13580 --- [http-nio-9000-exec-1] c.e.p.controllers.OrdersController       : org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:294)
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
+org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+jdk.proxy2/jdk.proxy2.$Proxy120.saveAndFlush(Unknown Source)
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:48)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 15:35:55.115  INFO 13580 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:35:55.180  INFO 13580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 15:35:55.363  INFO 13580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 15:36:11.866  INFO 11560 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 11560 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 15:36:11.871  INFO 11560 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 15:36:13.364  INFO 11560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 15:36:13.549  INFO 11560 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159 ms. Found 4 JPA repository interfaces.
+2022-05-30 15:36:14.343  INFO 11560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 15:36:14.358  INFO 11560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 15:36:14.359  INFO 11560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 15:36:14.526  INFO 11560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 15:36:14.527  INFO 11560 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2558 ms
+2022-05-30 15:36:14.826  INFO 11560 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 15:36:15.432  INFO 11560 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 15:36:15.504  INFO 11560 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 15:36:15.601  INFO 11560 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 15:36:16.086  INFO 11560 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 15:36:16.277  INFO 11560 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 15:36:17.181  INFO 11560 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 15:36:17.194  INFO 11560 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:36:17.934  WARN 11560 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 15:36:18.420  INFO 11560 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 15:36:18.435  INFO 11560 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 7.387 seconds (JVM running for 9.011)
+2022-05-30 15:36:30.628  INFO 11560 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 15:36:30.629  INFO 11560 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 15:36:30.631  INFO 11560 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-30 15:36:31.125 ERROR 11560 --- [http-nio-9000-exec-1] c.e.p.controllers.OrdersController       : org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:294)
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
+org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+jdk.proxy2/jdk.proxy2.$Proxy120.saveAndFlush(Unknown Source)
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:50)
+com.example.pancakem.services.impl.OrderServiceImpl$$FastClassBySpringCGLIB$$37600dea.invoke(<generated>)
+org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+com.example.pancakem.services.impl.OrderServiceImpl$$EnhancerBySpringCGLIB$$553183b0.insert(<generated>)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 15:38:59.481  INFO 11560 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:38:59.491  INFO 11560 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 15:38:59.554  INFO 11560 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 15:39:12.880  INFO 9140 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 9140 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 15:39:12.885  INFO 9140 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 15:39:15.954  INFO 9140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 15:39:16.156  INFO 9140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 180 ms. Found 4 JPA repository interfaces.
+2022-05-30 15:39:17.276  INFO 9140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 15:39:17.507  INFO 9140 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4506 ms
+2022-05-30 15:39:18.334  INFO 9140 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 15:39:20.316  INFO 9140 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 15:39:20.426  INFO 9140 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 15:39:20.616  INFO 9140 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 15:39:21.084  INFO 9140 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 15:39:21.608  INFO 9140 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 15:39:22.959  INFO 9140 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 15:39:22.979  INFO 9140 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:39:24.401  WARN 9140 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 15:39:25.267  INFO 9140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 15:39:25.292  INFO 9140 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 14.046 seconds (JVM running for 15.538)
+2022-05-30 15:39:25.333  INFO 9140 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:39:25.337  INFO 9140 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 15:39:25.361  INFO 9140 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 15:39:36.299  INFO 4788 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 4788 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 15:39:36.304  INFO 4788 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 15:39:37.522  INFO 4788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 15:39:37.683  INFO 4788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 4 JPA repository interfaces.
+2022-05-30 15:39:38.493  INFO 4788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 15:39:38.507  INFO 4788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 15:39:38.508  INFO 4788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 15:39:38.694  INFO 4788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 15:39:38.695  INFO 4788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2306 ms
+2022-05-30 15:39:38.923  INFO 4788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 15:39:39.347  INFO 4788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 15:39:39.423  INFO 4788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 15:39:39.518  INFO 4788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 15:39:40.049  INFO 4788 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 15:39:40.291  INFO 4788 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 15:39:41.317  INFO 4788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 15:39:41.333  INFO 4788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:39:42.362  WARN 4788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 15:39:43.081  INFO 4788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 15:39:43.097  INFO 4788 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 9.291 seconds (JVM running for 10.858)
+2022-05-30 15:39:51.186  INFO 4788 --- [http-nio-9000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 15:39:51.187  INFO 4788 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 15:39:51.189  INFO 4788 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-30 15:41:14.834 ERROR 4788 --- [http-nio-9000-exec-6] c.e.p.controllers.OrdersController       : org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:294)
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
+org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+jdk.proxy2/jdk.proxy2.$Proxy120.saveAndFlush(Unknown Source)
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:50)
+com.example.pancakem.services.impl.OrderServiceImpl$$FastClassBySpringCGLIB$$37600dea.invoke(<generated>)
+org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+com.example.pancakem.services.impl.OrderServiceImpl$$EnhancerBySpringCGLIB$$6613bf9e.insert(<generated>)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 15:44:53.006 ERROR 4788 --- [http-nio-9000-exec-7] c.e.p.controllers.OrdersController       : org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.example.pancakem.models.entities.OrdersEntity.discounts
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:294)
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
+org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+jdk.proxy2/jdk.proxy2.$Proxy120.saveAndFlush(Unknown Source)
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:50)
+com.example.pancakem.services.impl.OrderServiceImpl$$FastClassBySpringCGLIB$$37600dea.invoke(<generated>)
+org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+com.example.pancakem.services.impl.OrderServiceImpl$$EnhancerBySpringCGLIB$$6613bf9e.insert(<generated>)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 15:53:14.453  INFO 4788 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:53:14.672  INFO 4788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 15:53:14.895  INFO 4788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 15:53:29.099  INFO 14076 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 14076 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 15:53:29.111  INFO 14076 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 15:53:30.981  INFO 14076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 15:53:31.208  INFO 14076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 193 ms. Found 4 JPA repository interfaces.
+2022-05-30 15:53:32.445  INFO 14076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 15:53:32.462  INFO 14076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 15:53:32.463  INFO 14076 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 15:53:32.667  INFO 14076 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 15:53:32.669  INFO 14076 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3420 ms
+2022-05-30 15:53:32.887  INFO 14076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 15:53:33.538  INFO 14076 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 15:53:33.618  INFO 14076 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 15:53:33.718  INFO 14076 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 15:53:34.050  INFO 14076 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 15:53:34.235  INFO 14076 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 15:53:35.218  INFO 14076 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 15:53:35.231  INFO 14076 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:53:36.147  WARN 14076 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 15:53:36.643  INFO 14076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 15:53:36.658  INFO 14076 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 8.991 seconds (JVM running for 10.902)
+2022-05-30 15:53:46.804  INFO 14076 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 15:53:46.805  INFO 14076 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 15:53:46.808  INFO 14076 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-30 15:54:12.508 ERROR 14076 --- [http-nio-9000-exec-4] c.e.p.controllers.OrdersController       : java.lang.NullPointerException: Cannot invoke "com.example.pancakem.models.entities.DiscountsEntity.getId()" because the return value of "com.example.pancakem.models.entities.OrdersEntity.getDiscounts()" is null
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:50)
+com.example.pancakem.services.impl.OrderServiceImpl$$FastClassBySpringCGLIB$$37600dea.invoke(<generated>)
+org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+com.example.pancakem.services.impl.OrderServiceImpl$$EnhancerBySpringCGLIB$$63ba16e2.insert(<generated>)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 15:54:56.391  INFO 14076 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:54:56.396  INFO 14076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 15:54:56.417  INFO 14076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 15:55:09.939  INFO 13948 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 13948 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 15:55:09.945  INFO 13948 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 15:55:11.267  INFO 13948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 15:55:11.430  INFO 13948 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 4 JPA repository interfaces.
+2022-05-30 15:55:12.858  INFO 13948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 15:55:12.874  INFO 13948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 15:55:12.875  INFO 13948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 15:55:13.072  INFO 13948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 15:55:13.074  INFO 13948 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3029 ms
+2022-05-30 15:55:13.340  INFO 13948 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 15:55:14.186  INFO 13948 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 15:55:14.320  INFO 13948 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 15:55:14.480  INFO 13948 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 15:55:14.893  INFO 13948 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 15:55:15.199  INFO 13948 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 15:55:16.182  INFO 13948 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 15:55:16.201  INFO 13948 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:55:17.056  WARN 13948 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 15:55:17.994  INFO 13948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 15:55:18.016  INFO 13948 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 9.233 seconds (JVM running for 11.156)
+2022-05-30 15:55:26.401  INFO 13948 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 15:55:26.402  INFO 13948 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 15:55:26.403  INFO 13948 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-30 15:55:47.275 ERROR 13948 --- [http-nio-9000-exec-3] c.e.p.controllers.OrdersController       : java.lang.NullPointerException: Cannot invoke "com.example.pancakem.models.entities.DiscountsEntity.getId()" because the return value of "com.example.pancakem.models.entities.OrdersEntity.getDiscounts()" is null
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:49)
+com.example.pancakem.services.impl.OrderServiceImpl$$FastClassBySpringCGLIB$$37600dea.invoke(<generated>)
+org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+com.example.pancakem.services.impl.OrderServiceImpl$$EnhancerBySpringCGLIB$$8b8d41be.insert(<generated>)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 15:57:21.414  INFO 13948 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:57:21.426  INFO 13948 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 15:57:21.457  INFO 13948 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 15:57:44.852  INFO 5652 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 5652 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 15:57:44.858  INFO 5652 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 15:57:46.636  INFO 5652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 15:57:46.853  INFO 5652 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 4 JPA repository interfaces.
+2022-05-30 15:57:49.018  INFO 5652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 15:57:49.051  INFO 5652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 15:57:49.053  INFO 5652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 15:57:49.584  INFO 5652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 15:57:49.585  INFO 5652 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4596 ms
+2022-05-30 15:57:49.932  INFO 5652 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 15:57:50.764  INFO 5652 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 15:57:50.874  INFO 5652 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 15:57:51.044  INFO 5652 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 15:57:51.449  INFO 5652 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 15:57:51.648  INFO 5652 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 15:57:52.707  INFO 5652 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 15:57:52.723  INFO 5652 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 15:57:55.652  WARN 5652 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 15:57:57.166  INFO 5652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 15:57:57.183  INFO 5652 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 14.92 seconds (JVM running for 18.241)
+2022-05-30 15:59:29.556  INFO 5652 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 15:59:29.556  INFO 5652 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 15:59:29.558  INFO 5652 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-30 15:59:59.289  WARN 5652 --- [http-nio-9000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.example.pancakem.advices.GlobalExceptionHandler#handleException(Exception, HandlerMethod)
+
+java.lang.IllegalStateException: Could not resolve parameter [1] in public final org.springframework.http.ResponseEntity<java.lang.Object> com.example.pancakem.advices.GlobalExceptionHandler.handleException(java.lang.Exception,org.springframework.web.method.HandlerMethod): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1327) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.63.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.63.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-05-30 15:59:59.292  WARN 5652 --- [http-nio-9000-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2022-05-30 16:05:22.013  INFO 5652 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 16:05:22.797  INFO 5652 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 16:05:23.112  INFO 5652 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 16:05:38.733  INFO 8944 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 8944 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 16:05:38.739  INFO 8944 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 16:05:40.274  INFO 8944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 16:05:40.432  INFO 8944 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 4 JPA repository interfaces.
+2022-05-30 16:05:41.252  INFO 8944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 16:05:41.267  INFO 8944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 16:05:41.268  INFO 8944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 16:05:41.439  INFO 8944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 16:05:41.440  INFO 8944 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2587 ms
+2022-05-30 16:05:41.677  INFO 8944 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 16:05:42.351  INFO 8944 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 16:05:42.438  INFO 8944 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 16:05:42.544  INFO 8944 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 16:05:42.926  INFO 8944 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 16:05:43.166  INFO 8944 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 16:05:44.278  INFO 8944 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 16:05:44.295  INFO 8944 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 16:05:45.338  WARN 8944 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 16:05:45.897  INFO 8944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 16:05:45.913  INFO 8944 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 7.99 seconds (JVM running for 9.692)
+2022-05-30 16:06:11.832  INFO 8944 --- [http-nio-9000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 16:06:11.833  INFO 8944 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 16:06:11.836  INFO 8944 --- [http-nio-9000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-05-30 16:06:26.835  WARN 8944 --- [http-nio-9000-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1364, SQLState: HY000
+2022-05-30 16:06:26.836 ERROR 8944 --- [http-nio-9000-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : Field 'quantity' doesn't have a default value
+2022-05-30 16:06:26.840  INFO 8944 --- [http-nio-9000-exec-3] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2022-05-30 16:06:26.872 ERROR 8944 --- [http-nio-9000-exec-3] c.e.p.controllers.OrdersController       : org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:331)
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233)
+org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
+org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
+org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
+jdk.proxy2/jdk.proxy2.$Proxy120.saveAndFlush(Unknown Source)
+com.example.pancakem.services.impl.OrderServiceImpl.insert(OrderServiceImpl.java:51)
+com.example.pancakem.services.impl.OrderServiceImpl$$FastClassBySpringCGLIB$$37600dea.invoke(<generated>)
+org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+com.example.pancakem.services.impl.OrderServiceImpl$$EnhancerBySpringCGLIB$$553183b0.insert(<generated>)
+com.example.pancakem.controllers.OrdersController.insert(OrdersController.java:41)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:568)
+org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-05-30 16:08:46.169  INFO 8944 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 16:08:46.254  INFO 8944 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 16:08:46.332  INFO 8944 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 16:08:55.189  INFO 6224 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 6224 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 16:08:55.195  INFO 6224 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 16:08:56.713  INFO 6224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 16:08:56.895  INFO 6224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 4 JPA repository interfaces.
+2022-05-30 16:08:57.860  INFO 6224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 16:08:57.873  INFO 6224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 16:08:57.874  INFO 6224 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 16:08:58.037  INFO 6224 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 16:08:58.038  INFO 6224 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2740 ms
+2022-05-30 16:08:58.269  INFO 6224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 16:08:58.899  INFO 6224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 16:08:58.973  INFO 6224 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 16:08:59.077  INFO 6224 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 16:08:59.399  INFO 6224 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 16:08:59.582  INFO 6224 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 16:09:00.492  INFO 6224 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 16:09:00.513  INFO 6224 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 16:09:01.328  WARN 6224 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 16:09:01.844  INFO 6224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 16:09:01.859  INFO 6224 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 7.751 seconds (JVM running for 10.181)
+2022-05-30 16:09:05.471  INFO 6224 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 16:09:05.476  INFO 6224 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-30 16:09:05.491  INFO 6224 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-30 16:09:15.281  INFO 8656 --- [main] c.example.pancakem.PancakeMApplication   : Starting PancakeMApplication using Java 17.0.2 on DESKTOP-G09U01H with PID 8656 (C:\Users\Jovo\IdeaProjects\pancakeM\target\classes started by Jovo in C:\Users\Jovo\IdeaProjects\pancakeM)
+2022-05-30 16:09:15.287  INFO 8656 --- [main] c.example.pancakem.PancakeMApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-30 16:09:16.968  INFO 8656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 16:09:17.233  INFO 8656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 243 ms. Found 4 JPA repository interfaces.
+2022-05-30 16:09:18.411  INFO 8656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9000 (http)
+2022-05-30 16:09:18.450  INFO 8656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-30 16:09:18.451  INFO 8656 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-30 16:09:18.729  INFO 8656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-30 16:09:18.731  INFO 8656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3342 ms
+2022-05-30 16:09:19.099  INFO 8656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-30 16:09:20.464  INFO 8656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-30 16:09:20.536  INFO 8656 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 16:09:20.631  INFO 8656 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-05-30 16:09:21.066  INFO 8656 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 16:09:21.247  INFO 8656 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-30 16:09:22.133  INFO 8656 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 16:09:22.147  INFO 8656 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 16:09:22.860  WARN 8656 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 16:09:23.355  INFO 8656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9000 (http) with context path ''
+2022-05-30 16:09:23.369  INFO 8656 --- [main] c.example.pancakem.PancakeMApplication   : Started PancakeMApplication in 8.992 seconds (JVM running for 10.927)
+2022-05-30 16:09:35.084  INFO 8656 --- [http-nio-9000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-30 16:09:35.085  INFO 8656 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-30 16:09:35.087  INFO 8656 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-05-30 16:11:13.514  WARN 8656 --- [http-nio-9000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.example.pancakem.advices.GlobalExceptionHandler#handleException(Exception, HandlerMethod)
+
+java.lang.IllegalStateException: Could not resolve parameter [1] in public final org.springframework.http.ResponseEntity<java.lang.Object> com.example.pancakem.advices.GlobalExceptionHandler.handleException(java.lang.Exception,org.springframework.web.method.HandlerMethod): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1327) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) ~[tomcat-embed-core-9.0.63.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.63.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-05-30 16:11:13.517  WARN 8656 --- [http-nio-9000-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' not supported]

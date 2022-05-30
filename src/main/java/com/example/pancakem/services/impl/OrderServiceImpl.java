@@ -10,6 +10,7 @@ import com.example.pancakem.services.OrdersService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -41,15 +42,18 @@ public class OrderServiceImpl implements OrdersService {
     public void delete(Integer id) {
         ordersEntityRepository.deleteById(id);
     }
+    @Transactional
     @Override
     public Order insert(OrderRequest orderRequest)  throws NotFoundException, ConflictException {
         OrdersEntity ordersEntity = modelMapper.map(orderRequest, OrdersEntity.class);
+        System.out.println("#######"+orderRequest.getDiscountsId()   );
         ordersEntity.setId(null);
         ordersEntity = ordersEntityRepository.saveAndFlush(ordersEntity);
         entityManager.refresh(ordersEntity);
         return findById(ordersEntity.getId());
     }
 
+    @Transactional
     public Order update(Integer id, OrderRequest orderRequest) throws NotFoundException, ConflictException {
         OrdersEntity ordersEntity = modelMapper.map(orderRequest, OrdersEntity.class);
         ordersEntity.setId(id);

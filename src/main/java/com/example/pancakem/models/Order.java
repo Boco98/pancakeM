@@ -10,5 +10,5 @@ public class Order {
     private Integer id;
     private Timestamp orderDatetime;
     private String description;
-    private Integer discountsDiscount;
+    private Integer discountsId;
 }

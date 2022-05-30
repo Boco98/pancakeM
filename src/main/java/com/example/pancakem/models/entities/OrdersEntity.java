@@ -26,7 +26,7 @@ public class OrdersEntity {
     @JsonIgnore
     private DiscountsEntity discounts;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade =  CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "orders_pancakes",
             joinColumns = {
                     @JoinColumn(name = "order_id", referencedColumnName = "id")},
