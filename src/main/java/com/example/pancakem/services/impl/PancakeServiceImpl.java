@@ -49,7 +49,13 @@ public class PancakeServiceImpl implements PancakesService {
     }
 
     @Override
-    public void delete(Integer id) {
+    public List<Pancake> findCorrectPancake() {
+        List<PancakesEntity> filteredList = pancakesEntityRepository.findAll().stream().filter(c -> isCorrectPancake(modelMapper.map(c, Pancake.class))).toList();
+        return filteredList.stream().map(c -> modelMapper.map(c, Pancake.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void delete(Integer id)throws NotFoundException {
         pancakesEntityRepository.deleteById(id);
     }
 
@@ -70,12 +76,28 @@ public class PancakeServiceImpl implements PancakesService {
 
     @Transactional
     @Override
-    public Pancake update(Integer id, PancakeRequest pancakeRequest) throws NotFoundException, ConflictException {
+    public Pancake update(Integer id, PancakeRequest pancakeRequest) throws NotFoundException{
         PancakesEntity pancakesEntity = modelMapper.map(pancakeRequest, PancakesEntity.class);
         pancakesEntity.setId(id);
         pancakesEntity = pancakesEntityRepository.saveAndFlush(pancakesEntity);
         entityManager.refresh(pancakesEntity);
         return findById(pancakesEntity.getId());
+    }
+
+    @Override
+    public boolean isCorrectPancake(Pancake pancake) {
+        SinglePancake pancakeS = findById(pancake.getId());
+        List<Ingredient> ingredients = pancakeS.getIngredients();
+        if(ingredients==null || ingredients.toArray().length==0)
+            return  false;
+        int numOfBase = 0;
+        boolean hasFilling = false;
+        for (Ingredient x: pancakeS.getIngredients()) {
+            if (x.getIngredientCategoriesId()==1) numOfBase++;
+            else if(x.getIngredientCategoriesId()==2) hasFilling=true;
+        }
+
+        return (hasFilling && (numOfBase==1));
     }
 
 

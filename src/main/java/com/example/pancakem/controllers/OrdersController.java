@@ -2,6 +2,7 @@ package com.example.pancakem.controllers;
 
 import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
+import com.example.pancakem.exceptions.PancakeException;
 import com.example.pancakem.models.*;
 import com.example.pancakem.services.OrdersService;
 import com.example.pancakem.services.PancakesService;
@@ -38,7 +39,7 @@ public class OrdersController {
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Order insert(@RequestBody OrderRequest orderRequest) throws NotFoundException, ConflictException {
+    public Order insert(@RequestBody OrderRequest orderRequest) throws NotFoundException, ConflictException , PancakeException {
         return ordersService.insert(orderRequest);
     }
 

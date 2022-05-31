@@ -11,8 +11,10 @@ import java.util.List;
 public interface PancakesService {
     List<Pancake> findAll();
     SinglePancake findById(Integer id) throws NotFoundException;
-
-    void delete(Integer id);
+    List<Pancake> findCorrectPancake();
+    void delete(Integer id) throws NotFoundException;
     Pancake insert(PancakeRequest pancakeRequest) throws NotFoundException, ConflictException;
-    Pancake update(Integer id, PancakeRequest pancakeRequest) throws NotFoundException, ConflictException;
+    Pancake update(Integer id, PancakeRequest pancakeRequest) throws NotFoundException;
+    boolean isCorrectPancake(Pancake pancake);
+
 }

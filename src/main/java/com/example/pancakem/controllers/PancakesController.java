@@ -33,6 +33,11 @@ public class PancakesController {
         return pancakesService.findAll();
     }
 
+    @GetMapping("/correctPancakes")
+    List<Pancake> findCorrectPancake(){
+        return pancakesService.findCorrectPancake();
+    }
+
     @GetMapping("/{id}")
     public SinglePancake findById(@PathVariable Integer id) throws NotFoundException {
         return pancakesService.findById(id);

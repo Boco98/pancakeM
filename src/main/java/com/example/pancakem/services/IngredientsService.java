@@ -13,10 +13,10 @@ public interface IngredientsService {
 
     Ingredient findById(Integer id) throws NotFoundException;
 
-    List<Ingredient> getAllIngredientsByCategoryId(Integer id);
+    List<Ingredient> getAllIngredientsByCategoryId(Integer id)throws NotFoundException;
 
-    void delete(Integer id);
-    public EntityManager getManager();
+    void delete(Integer id)throws NotFoundException;
+    EntityManager getManager();
     Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException, ConflictException;
-    Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException, ConflictException;
+    Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException;
 }

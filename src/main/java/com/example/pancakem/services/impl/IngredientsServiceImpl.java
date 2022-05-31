@@ -45,17 +45,17 @@ public class IngredientsServiceImpl implements IngredientsService {
     }
 
     @Override
-    public List<Ingredient> getAllIngredientsByCategoryId(Integer id) {
+    public List<Ingredient> getAllIngredientsByCategoryId(Integer id) throws NotFoundException {
         return ingredientsEntityRepository.getAllByIngredientCategories_Id(id).stream().map(l->modelMapper.map(l, Ingredient.class)).collect(Collectors.toList());
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Integer id) throws NotFoundException {
         ingredientsEntityRepository.deleteById(id);
     }
 
     @Override
-    public Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException {
+    public Ingredient insert(IngredientRequest ingredientRequest) throws NotFoundException, ConflictException {
         IngredientsEntity ingredientsEntity=modelMapper.map(ingredientRequest, IngredientsEntity.class);
         ingredientsEntity.setId(null);
         if(ingredientsEntityRepository.existsByName(ingredientsEntity.getName()))

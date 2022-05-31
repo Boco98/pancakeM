@@ -36,7 +36,7 @@ public class IngredientsController {
 
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id){
+    public void delete(@PathVariable Integer id)throws NotFoundException {
         ingredientsService.delete(id);
     }
 
@@ -47,7 +47,7 @@ public class IngredientsController {
     }
 
     @PutMapping("/{id}")
-    public Ingredient update(@PathVariable Integer id, @RequestBody IngredientRequest ingredientRequest) throws NotFoundException, ConflictException {
+    public Ingredient update(@PathVariable Integer id, @RequestBody IngredientRequest ingredientRequest) throws NotFoundException{
         return ingredientsService.update(id,ingredientRequest);
     }
 }
