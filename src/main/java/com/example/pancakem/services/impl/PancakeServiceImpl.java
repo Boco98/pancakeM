@@ -3,19 +3,18 @@ package com.example.pancakem.services.impl;
 import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.*;
-import com.example.pancakem.models.entities.IngredientsEntity;
 import com.example.pancakem.models.entities.PancakesEntity;
 import com.example.pancakem.repositories.IngredientsEntityRepository;
 import com.example.pancakem.repositories.PancakesEntityRepository;
 import com.example.pancakem.services.IngredientsService;
 import com.example.pancakem.services.PancakesService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,6 +53,20 @@ public class PancakeServiceImpl implements PancakesService {
         return filteredList.stream().map(c -> modelMapper.map(c, Pancake.class)).collect(Collectors.toList());
     }
 
+    @Override
+    public List<PancakesWithPrice> getPancakesWithPrice() {
+        List<Pancake> pancakeList=findAll();
+        return pancakeList.stream().map(c->new PancakesWithPrice(c, calculatePrice(c.getId()))).collect(Collectors.toList());
+    }
+    public BigDecimal calculatePrice(Integer pancakeId){
+        SinglePancake pancake = findById(pancakeId);
+        BigDecimal sum = new BigDecimal(0);
+        for(Ingredient x : pancake.getIngredients()){
+            sum = sum.add(x.getPrice());
+        }
+
+        return sum;
+    }
     @Override
     public void delete(Integer id)throws NotFoundException {
         pancakesEntityRepository.deleteById(id);
