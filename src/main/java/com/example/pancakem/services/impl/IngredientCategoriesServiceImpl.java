@@ -5,11 +5,8 @@ import com.example.pancakem.models.IngredientCategory;
 import com.example.pancakem.models.SingleIngredientCategory;
 import com.example.pancakem.repositories.IngredientCategoriesEntityRepository;
 import com.example.pancakem.services.IngredientCategoriesService;
-import net.bytebuddy.implementation.auxiliary.AuxiliaryType;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -68,8 +68,6 @@ public class IngredientsServiceImpl implements IngredientsService {
     public Ingredient update(Integer id, IngredientRequest ingredientRequest) throws NotFoundException {
         IngredientsEntity ingredientsEntity=modelMapper.map(ingredientRequest, IngredientsEntity.class);
         ingredientsEntity.setId(id);
-        /*if(ingredientsEntityRepository.existsByName(ingredientsEntity.getName()))
-            throw new ConflictException();*/
         ingredientsEntity= ingredientsEntityRepository.saveAndFlush(ingredientsEntity);
         entityManager.refresh(ingredientsEntity);
         return findById(ingredientsEntity.getId());

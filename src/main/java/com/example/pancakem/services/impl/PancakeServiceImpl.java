@@ -60,27 +60,8 @@ public class PancakeServiceImpl implements PancakesService {
 
         PancakesEntity pancakesEntity = modelMapper.map(pancakeRequest, PancakesEntity.class);
         pancakesEntity.setId(null);
-      /*  pancakeRequest.getIngredients().stream().map(l->{
-                    IngredientsEntity ingredientsEntity =modelMapper.map(l, IngredientsEntity.class);
-                    ingredientsEntity.getPancakes().add(pancakesEntity);
-                }
-        );*/
-        /*for (IngredientsEntity  x: pancakesEntity.getIngredients()
-             ) {
-            Ingredient a = ingredientsService.findById(x.getId());
-            x = modelMapper.map(a, IngredientsEntity.class);
-            x = ingredientsEntityRepository.saveAndFlush(x);
-        }*/
-
-
-        //pancakesEntity.setIngredients(pancakeRequest.getIngredients().stream().map(l->modelMapper.map(l, IngredientsEntity.class)).collect(Collectors.toList()));
-
-        //pancakesEntityRepository.findAll().stream().map(l->modelMapper.map(l, Pancake.class)).collect(Collectors.toList());
-
         if(pancakesEntityRepository.existsByName(pancakesEntity.getName()))
             throw new ConflictException();
-        //System.out.println("###"+pancakeRequest.getIngredients().toArray().length);
-        //System.out.println("######"+pancakesEntity.getIngredients().toArray().length);
         pancakesEntity = pancakesEntityRepository.saveAndFlush(pancakesEntity);
 
         entityManager.refresh(pancakesEntity);
@@ -92,9 +73,6 @@ public class PancakeServiceImpl implements PancakesService {
     public Pancake update(Integer id, PancakeRequest pancakeRequest) throws NotFoundException, ConflictException {
         PancakesEntity pancakesEntity = modelMapper.map(pancakeRequest, PancakesEntity.class);
         pancakesEntity.setId(id);
-        /*
-        if(pancakesEntityRepository.existsByName(pancakesEntity.getName()))
-            throw new ConflictException();*/
         pancakesEntity = pancakesEntityRepository.saveAndFlush(pancakesEntity);
         entityManager.refresh(pancakesEntity);
         return findById(pancakesEntity.getId());

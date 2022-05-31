@@ -4,16 +4,16 @@ import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.*;
 import com.example.pancakem.models.entities.OrdersEntity;
-import com.example.pancakem.models.entities.PancakesEntity;
 import com.example.pancakem.repositories.OrdersEntityRepository;
 import com.example.pancakem.services.OrdersService;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,8 +46,10 @@ public class OrderServiceImpl implements OrdersService {
     @Override
     public Order insert(OrderRequest orderRequest)  throws NotFoundException, ConflictException {
         OrdersEntity ordersEntity = modelMapper.map(orderRequest, OrdersEntity.class);
-        System.out.println("#######"+orderRequest.getDiscountsId()   );
         ordersEntity.setId(null);
+        Instant instantMoment = Instant.now();
+        Timestamp nowDateTime = Timestamp.from(instantMoment);
+        ordersEntity.setOrderDatetime(nowDateTime);
         ordersEntity = ordersEntityRepository.saveAndFlush(ordersEntity);
         entityManager.refresh(ordersEntity);
         return findById(ordersEntity.getId());
@@ -57,7 +59,6 @@ public class OrderServiceImpl implements OrdersService {
     public Order update(Integer id, OrderRequest orderRequest) throws NotFoundException, ConflictException {
         OrdersEntity ordersEntity = modelMapper.map(orderRequest, OrdersEntity.class);
         ordersEntity.setId(id);
-
         ordersEntity = ordersEntityRepository.saveAndFlush(ordersEntity);
         entityManager.refresh(ordersEntity);
         return findById(ordersEntity.getId());
