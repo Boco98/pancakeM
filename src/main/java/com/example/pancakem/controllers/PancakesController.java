@@ -4,7 +4,7 @@ import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Pancake;
 import com.example.pancakem.models.PancakeRequest;
-import com.example.pancakem.models.PancakesWithPrice;
+import com.example.pancakem.models.PancakeWithPrice;
 import com.example.pancakem.models.SinglePancake;
 import com.example.pancakem.models.entities.PancakesEntity;
 import com.example.pancakem.repositories.PancakesEntityRepository;
@@ -39,8 +39,8 @@ public class PancakesController {
         return pancakesService.findCorrectPancake();
     }
     @GetMapping("/prices")
-    List<PancakesWithPrice>  getPancakesWithPrice(){
-        return pancakesService.getPancakesWithPrice();
+    List<PancakeWithPrice>  getPancakeWithPrice(){
+        return pancakesService.getPancakeWithPrice();
     }
     @GetMapping("/{id}")
     public SinglePancake findById(@PathVariable Integer id) throws NotFoundException {

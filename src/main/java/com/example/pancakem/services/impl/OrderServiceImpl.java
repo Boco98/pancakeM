@@ -18,6 +18,7 @@ import javax.persistence.PersistenceContext;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,31 +60,32 @@ public class OrderServiceImpl implements OrdersService {
             throw new PancakeException();
         OrdersEntity ordersEntity = modelMapper.map(orderRequest, OrdersEntity.class);
         ordersEntity.setId(null);
-
         Instant instantMoment = Instant.now();
         Timestamp nowDateTime = Timestamp.from(instantMoment);
         ordersEntity.setOrderDatetime(nowDateTime);
         ordersEntity = ordersEntityRepository.saveAndFlush(ordersEntity);
-        if(has75Discount(orderRequest)){
-            ordersEntity.setDiscounts(modelMapper.map( discountsService.findById(3), DiscountsEntity.class));
-        }else{
-            Integer discountID = changeDiscountNOT75(ordersEntity);
-        }
+        entityManager.refresh(ordersEntity);
+        ordersEntity.setDiscounts(modelMapper.map(discountsService.findById(calculateDiscountId(ordersEntity)),DiscountsEntity.class ));
         ordersEntity = ordersEntityRepository.saveAndFlush(ordersEntity);
         entityManager.refresh(ordersEntity);
         return findById(ordersEntity.getId());
     }
-    private Integer changeDiscountNOT75(OrdersEntity order){
+    private Integer calculateDiscountId(OrdersEntity ordersEntity){
+        SingleOrder order= modelMapper.map(ordersEntity, SingleOrder.class);
         Integer discountId=1;
-        Double priceD = calculatePrice(modelMapper.map(order, SingleOrder.class)).doubleValue();
-        if(priceD<20) discountId=4;
-        else if ( (priceD>=20) && (priceD<50)) discountId=1;
-        else if ( (priceD>50)   ) discountId=2;
-        order.setDiscounts(modelMapper.map( discountsService.findById(discountId), DiscountsEntity.class));
+        if(has75Discount(order)){
+            discountId=3;
+        }else{
+            Double priceD = calculatePrice(order).doubleValue();
+            if(priceD<20) discountId=4; //discount=0%
+            else if ( (priceD>=20) && (priceD<50)) discountId=1;//5%
+            else if ( (priceD>50)   ) discountId=2;//10%
+        }
+
         return discountId;
     }
 
-    private boolean has75Discount(OrderRequest order){
+    private boolean has75Discount(SingleOrder order){
         Integer numOfIngredients =0;
         Integer numOfHealtyIngredients=0;
         for(Pancake x : order.getPancakes()){
@@ -122,13 +124,65 @@ public class OrderServiceImpl implements OrdersService {
         SingleOrder parentOrder= findById(id);
         SingleOrderWithPrice order =   modelMapper.map(parentOrder, SingleOrderWithPrice.class);
         order.setPrice(calculatePrice(parentOrder));
+        if(order.getDiscountsId()==3){//15% on every healty pancake
+            order.setPriceWithDiscount(calculatePrice85(order.getPancakes()));
+            order.setOrderDiscountString("Discount: 15% discount on every healty pancake" );
+        }else{
+            Integer discount = discountsService.findById(order.getDiscountsId()).getDiscount();
+            order.setPriceWithDiscount( calculatePriceWithDiscount(order.getPrice(), discount)   );
+            order.setOrderDiscountString("Discount: " + discount + " %" );
+        }
 
-        order.setPriceWithDiscount(calculatePriceWithDiscount(order.getPrice(),order.getDiscountsId()));
-        Integer discount = discountsService.findById(order.getDiscountsId()).getDiscount();
-        order.setOrderDiscount("Discount: " + discount + " %" );
         return order;
     }
+    public SingleOrderWithPriceAndPancakesPrices findByIdWithPriceAndPancakePrices( Integer id) throws  NotFoundException{
+        SingleOrderWithPrice order1 = findOrderPriceById(id);
+        SingleOrderWithPriceAndPancakesPrices newOrder = new SingleOrderWithPriceAndPancakesPrices();
+        newOrder.setId(id);
+        newOrder.setDiscountsId(order1.getDiscountsId());
+        newOrder.setPrice((order1.getPrice()));
+        newOrder.setDescription(order1.getDescription());
+        newOrder.setOrderDatetime(order1.getOrderDatetime());
+        newOrder.setPriceWithDiscount(order1.getPriceWithDiscount());
+        newOrder.setOrderDiscountString(order1.getOrderDiscountString());
+        List<Pancake> list1 = order1.getPancakes();
+        List<PancakeWithPriceAndDiscount> list2 = new ArrayList<PancakeWithPriceAndDiscount>();
+        for(Pancake x : list1){
+            BigDecimal y =  pancakesService.calculatePrice(x.getId());
+            Double littlePrice= y.doubleValue();
+            if(healtyPancake(x)){
+                littlePrice = littlePrice*85/100;
+            }
+            list2.add(new PancakeWithPriceAndDiscount(x,y, new BigDecimal(littlePrice.toString())));
+        }
+        newOrder.setPancakes(list2);
+        return newOrder;
 
+    }
+    private BigDecimal calculatePrice85(List<Pancake> pancakes){
+        BigDecimal sum = new BigDecimal(0);
+        for(Pancake x: pancakes){
+            if(healtyPancake(x)){
+                Double littlePrice = pancakesService.calculatePrice(x.getId()).doubleValue();
+                littlePrice = littlePrice*85/100;
+                sum =  sum.add(new BigDecimal(littlePrice.toString()));
+            }else{
+                sum = sum.add(pancakesService.calculatePrice(x.getId()));
+                System.out.println("sum:"+sum);
+            }
+        }
+        return sum;
+    }
+    private boolean healtyPancake(Pancake p){
+        SinglePancake pancake = pancakesService.findById(p.getId());
+        Integer numOfIngredients = pancake.getIngredients().toArray().length;
+        Integer numOfHealtyIngredients = 0;
+        for(Ingredient x: pancake.getIngredients()){
+            if(x.getHealthyIngredient()) numOfHealtyIngredients++;
+        }
+
+        return  ( (numOfIngredients.doubleValue()/100*75) <= numOfHealtyIngredients   );
+    }
     private BigDecimal calculatePrice(SingleOrder singleOrder){
         BigDecimal sum = BigDecimal.ZERO;
         for(Pancake x: singleOrder.getPancakes()){

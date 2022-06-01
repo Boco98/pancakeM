@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Data
 public class SingleOrderWithPrice extends SingleOrder{
     private BigDecimal price;
-    private String orderDiscount;
+    private String orderDiscountString;
     private BigDecimal priceWithDiscount;
 
 }

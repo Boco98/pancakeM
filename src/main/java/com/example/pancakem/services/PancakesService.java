@@ -4,7 +4,7 @@ import com.example.pancakem.exceptions.ConflictException;
 import com.example.pancakem.exceptions.NotFoundException;
 import com.example.pancakem.models.Pancake;
 import com.example.pancakem.models.PancakeRequest;
-import com.example.pancakem.models.PancakesWithPrice;
+import com.example.pancakem.models.PancakeWithPrice;
 import com.example.pancakem.models.SinglePancake;
 
 import java.math.BigDecimal;
@@ -15,7 +15,7 @@ public interface PancakesService {
     SinglePancake findById(Integer id) throws NotFoundException;
     List<Pancake> findCorrectPancake();
     BigDecimal calculatePrice(Integer id);
-    List<PancakesWithPrice> getPancakesWithPrice();
+    List<PancakeWithPrice> getPancakeWithPrice();
     void delete(Integer id) throws NotFoundException;
     Pancake insert(PancakeRequest pancakeRequest) throws NotFoundException, ConflictException;
     Pancake update(Integer id, PancakeRequest pancakeRequest) throws NotFoundException;

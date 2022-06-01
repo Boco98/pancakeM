@@ -54,9 +54,9 @@ public class PancakeServiceImpl implements PancakesService {
     }
 
     @Override
-    public List<PancakesWithPrice> getPancakesWithPrice() {
+    public List<PancakeWithPrice> getPancakeWithPrice() {
         List<Pancake> pancakeList=findAll();
-        return pancakeList.stream().map(c->new PancakesWithPrice(c, calculatePrice(c.getId()))).collect(Collectors.toList());
+        return pancakeList.stream().map(c->new PancakeWithPrice(c, calculatePrice(c.getId()))).collect(Collectors.toList());
     }
     public BigDecimal calculatePrice(Integer pancakeId){
         SinglePancake pancake = findById(pancakeId);

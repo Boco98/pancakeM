@@ -37,7 +37,10 @@ public class OrdersController {
     public SingleOrderWithPrice findByIdWithPrice(@PathVariable Integer id) throws  NotFoundException{
         return  ordersService.findOrderPriceById(id);
     }
-
+    @GetMapping("/{id}/withPriceAndPancakesPrices")
+    public SingleOrderWithPriceAndPancakesPrices finByIdWithPriceAndPancakePrices(@PathVariable Integer id) throws  NotFoundException{
+        return  ordersService.findByIdWithPriceAndPancakePrices(id);
+    }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id){
         ordersService.delete(id);
